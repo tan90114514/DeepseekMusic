@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSM B站收藏夹助手</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">DS</div>
+      <div>
+        <h1>DSM · B站收藏夹助手</h1>
+        <p>识别收藏夹 · 发送任务 · 显示进度</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="card page-card">
+        <div class="eyebrow">当前页面</div>
+        <div id="pageState" class="page-state">正在读取标签页…</div>
+        <div class="favorite-id-row">
+          <span>收藏夹 ID</span>
+          <strong id="favoriteId">—</strong>
+        </div>
+      </section>
+
+      <details class="card settings-card" id="settingsDetails">
+        <summary>连接设置</summary>
+        <div class="field">
+          <label for="port">本地端口</label>
+          <input id="port" type="number" min="1024" max="65535" step="1" value="39547" />
+        </div>
+        <div class="field">
+          <label for="token">配对 Token</label>
+          <div class="token-row">
+            <input id="token" type="password" autocomplete="off" spellcheck="false" placeholder="在软件设置页生成并复制" />
+            <button id="toggleToken" class="ghost small" type="button">显示</button>
+          </div>
+        </div>
+        <button id="testBtn" class="secondary" type="button">保存并测试连接</button>
+        <p id="connectionStatus" class="hint"></p>
+      </details>
+
+      <label class="cookie-row">
+        <input id="useCookies" type="checkbox" />
+        <span>携带 B站登录 Cookie（可选）</span>
+      </label>
+      <p class="privacy">
+        默认不发送。勾选后仅把 B站登录所需的白名单 Cookie 发到本机
+        127.0.0.1，用于访问需要登录的收藏夹；不会写入本地数据库或日志。
+      </p>
+
+      <button id="sendBtn" class="primary" type="button" disabled>发送到本地音乐库</button>
+      <p id="message" class="message"></p>
+
+      <section id="progressSection" class="card progress-card" hidden>
+        <div class="progress-head">
+          <div>
+            <div class="eyebrow">本地任务</div>
+            <div id="jobTitle" class="job-title">等待任务…</div>
+          </div>
+          <span id="jobStatus" class="status-pill">—</span>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+        <div id="jobCounts" class="counts">—</div>
+        <div id="currentLine" class="current-line"></div>
+        <div id="failureBox" class="failure-box" hidden>
+          <div class="failure-title">失败条目（可在桌面任务列表重试）</div>
+          <ul id="failureList"></ul>
+        </div>
+        <button id="refreshBtn" class="ghost" type="button">刷新进度</button>
+      </section>
+
+      <footer class="footer">
+        插件只识别页面和发送任务；下载、解密、入库全部由本地软件完成。<br />
+        请仅用于个人备份和学习，遵守平台条款，不要公开传播音频。
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

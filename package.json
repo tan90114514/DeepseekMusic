@@ -1,0 +1,45 @@
+{
+  "name": "dsm",
+  "version": "0.10.0",
+  "description": "DS音乐播放器（DSM）：Windows 本地音乐播放、歌单匹配、桌面歌词和 B站收藏夹音频下载",
+  "main": "./out/main/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "tan90114514",
+    "url": "https://github.com/tan90114514"
+  },
+  "contributors": [
+    {
+      "name": "DeepSeek",
+      "url": "https://www.deepseek.com/"
+    }
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "dist": "npm run build && electron-builder --win --x64",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "music-metadata": "12.5.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sql.js": "1.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/sql.js": "1.4.11",
+    "@vitejs/plugin-react": "5.2.0",
+    "electron": "44.7.0",
+    "electron-builder": "26.18.0",
+    "electron-vite": "4.0.1",
+    "typescript": "5.9.3",
+    "vite": "7.3.8"
+  }
+}
+
+

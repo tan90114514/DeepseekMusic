@@ -1,0 +1,51 @@
+appId: com.dsm.musicplayer
+productName: DS音乐播放器
+copyright: Copyright © 2026 tan90114514 · Developed by DeepSeek (AI)
+
+directories:
+  output: dist
+  buildResources: build
+
+files:
+  - out/**/*
+  - package.json
+  - build-info.json
+
+extraResources:
+  - from: extension
+    to: extension
+  - from: DEVELOPMENT.md
+    to: DEVELOPMENT.md
+  - from: NOTICE.md
+    to: NOTICE.md
+  - from: build/icon.png
+    to: tray.png
+
+asar: true
+compression: normal
+npmRebuild: false
+electronDist: node_modules/electron/dist
+
+win:
+  executableName: DSM
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  requestedExecutionLevel: asInvoker
+
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  artifactName: DSM-${version}-Setup.${ext}
+
+portable:
+  unpackDirName: DSM
+  artifactName: DSM-${version}-Portable.${ext}
+
+publish: null

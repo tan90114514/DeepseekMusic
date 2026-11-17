@@ -1,0 +1,18 @@
+{
+  "productName": "DS音乐播放器",
+  "abbreviation": "DSM",
+  "version": "0.10.0",
+  "basedOnVersion": "0.9.0",
+  "originalDeveloper": "DeepSeek",
+  "developmentRole": "AI 协作开发（主要开发）",
+  "maintainer": "tan90114514",
+  "maintainerUrl": "https://github.com/tan90114514",
+  "aiTools": [
+    "DeepSeek"
+  ],
+  "developmentDate": "2026-11-13",
+  "license": "MIT",
+  "notice": "衍生版本请保留 DEVELOPMENT.md 和 NOTICE.md，并在其中补充衍生开发记录。"
+}
+
+

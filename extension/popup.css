@@ -1,0 +1,377 @@
+:root {
+  color-scheme: dark;
+  --bg: #101015;
+  --panel: #191922;
+  --panel-2: #20202b;
+  --text: #f4f4f8;
+  --muted: #9b9baa;
+  --border: #2d2d3a;
+  --accent: #fb7299;
+  --accent-strong: #ff8aab;
+  --green: #49c28d;
+  --amber: #f1b85b;
+  --red: #ff7070;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 390px;
+  min-height: 480px;
+  max-height: 600px;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(251, 114, 153, 0.14), transparent 34%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 13px;
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 18px 18px 12px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #4d6bfe, #1f38bd);
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: -0.4px;
+  box-shadow: 0 8px 24px rgba(77, 107, 254, 0.28);
+}
+
+h1 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+}
+
+.header p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+main {
+  padding: 0 14px 16px;
+}
+
+.card {
+  background: rgba(25, 25, 34, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+.page-state {
+  font-size: 13px;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.page-state.ok {
+  color: var(--green);
+}
+
+.page-state.error {
+  color: var(--amber);
+}
+
+.favorite-id-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.favorite-id-row strong {
+  color: var(--text);
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+.settings-card summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text);
+  user-select: none;
+}
+
+.settings-card[open] summary {
+  margin-bottom: 12px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--panel-2);
+  color: var(--text);
+  padding: 0 10px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus {
+  border-color: rgba(251, 114, 153, 0.7);
+  box-shadow: 0 0 0 3px rgba(251, 114, 153, 0.12);
+}
+
+.token-row {
+  display: flex;
+  gap: 8px;
+}
+
+.token-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  transition: 120ms ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button.primary {
+  width: 100%;
+  height: 42px;
+  background: linear-gradient(135deg, var(--accent), #e86091);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(251, 114, 153, 0.2);
+}
+
+button.primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+button.secondary {
+  width: 100%;
+  height: 32px;
+  background: var(--panel-2);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+button.ghost {
+  height: 32px;
+  background: transparent;
+  border-color: var(--border);
+  color: var(--muted);
+  padding: 0 10px;
+}
+
+button.ghost:hover,
+button.secondary:hover {
+  border-color: #454556;
+  color: var(--text);
+}
+
+button.small {
+  height: 34px;
+  flex: 0 0 auto;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 8px 0 0;
+  min-height: 14px;
+}
+
+.hint.ok {
+  color: var(--green);
+}
+
+.hint.error {
+  color: var(--red);
+}
+
+.cookie-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 2px 2px 6px;
+  font-size: 12px;
+}
+
+.cookie-row input {
+  accent-color: var(--accent);
+}
+
+.privacy {
+  margin: 0 2px 14px;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+.message {
+  min-height: 18px;
+  margin: 10px 2px 0;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+.message.error {
+  color: var(--red);
+}
+
+.message.ok {
+  color: var(--green);
+}
+
+.progress-card {
+  margin-top: 12px;
+}
+
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.job-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.status-pill {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.status-pill.running {
+  color: var(--accent-strong);
+  background: rgba(251, 114, 153, 0.12);
+}
+
+.status-pill.completed {
+  color: var(--green);
+  background: rgba(73, 194, 141, 0.12);
+}
+
+.status-pill.partial,
+.status-pill.failed,
+.status-pill.interrupted {
+  color: var(--red);
+  background: rgba(255, 112, 112, 0.1);
+}
+
+.progress-track {
+  height: 6px;
+  margin: 12px 0 8px;
+  border-radius: 999px;
+  background: #292936;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #fb7299, #ff9bbb);
+  transition: width 300ms ease;
+}
+
+.counts {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.current-line {
+  margin-top: 7px;
+  font-size: 11px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.failure-box {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 9px;
+}
+
+.failure-title {
+  color: var(--red);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.failure-box ul {
+  margin: 0;
+  padding-left: 16px;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+.progress-card button.ghost {
+  margin-top: 10px;
+}
+
+.footer {
+  margin-top: 16px;
+  padding: 0 3px;
+  color: #6d6d7c;
+  font-size: 10px;
+  line-height: 1.6;
+}
